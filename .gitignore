@@ -1,0 +1,11 @@
+ignoreme/ignoremeDiretorioInterno/ignoremePasta.txt
+ignoreme/ignoremeDiretorioInterno/ignoreme.txt
+ignoreme/ignoremeDiretorioInterno/
+ignoreme/
+ignoreme.txt
+
+
+
+#ignoremePasta.txt
+#ignoreme/
+#ignoreme/*/*.txt
