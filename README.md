@@ -3,7 +3,7 @@ O GIT é um sistema de versionamento de arquivos, usado principalmente para cont
 Quando temos um projeto em que várias pessoas acessam e modificam os mesmos arquivos, é interessante utilizar o GIT como ferramenta de controle de código fonte.    
 
 
-## Comandos
+## Comandos básicos
 
 Inicializa um novo repositório Git  
 ```
@@ -14,6 +14,17 @@ Exibe o status dos arquivos em relação ao repositório:
 ```
 git status
 ```
+
+Para adicionar arquivos ao monitoramento do GIT:
+```
+git add <nomeArquivo>
+```
+
+Para adicionar todos os arquivos e pastas do diretório atual ao monitoramento do GIT:
+```
+git add .
+```
+
 Para salvar um estado dos arquivos no GIT, fazemos um commit:
 ```
 git commit -m 'primeiro commit'
@@ -71,6 +82,11 @@ git log --oneline
 Um log mais detalhado:
 ```
 git log -p
+```
+
+Um log com gráfico (simplório):
+```
+git log --graph
 ```
 
 A saída do log pode ser configurada de diversas formas, usando o comando **--pretty**.
@@ -199,3 +215,106 @@ O merge irá mesclar o conteúdo de uma outra branch na branch atual, criando um
 ```
 git merge <nomeBranch>
 ```
+
+Para mesclar os commits sem perda entre duas branches, podemos usar o rebase.
+Esse comando pega todos os commits de uma outra branch e adiciona na branch atual, deixando o último commit da branch atual como o atual.  
+Ele também exclui a outra branch.
+```
+git rebase <nomeBranch>
+```
+
+## Revertendo estado dos arquivos
+Podemos reverter as alterações feitas em arquivos em três momentos.   
+ 
+1. Antes de adicionar ao 'staging':  
+```
+git checkout -- <arquivo>
+```
+Essa alteração desfaz as alterações feitas no arquivo, devolvendo para o estado em que estava no último commit.
+
+2. Após adicionar ao staging:
+```
+git reset HEAD <arquivo>
+```
+Essa alteração remove o arquivo do 'staging', mas não remove as alterações.  
+Para remover, agora basta usar o comando **1**.
+
+3. Após realizar o commit:
+```
+git revert <hashCommit>
+```
+Esse comando cria um novo commit, desfazendo as alterações feitas nos arquivos do commit anterior.  
+>É possível pegar o hash do commit no log.
+
+## Stash
+O stash permite que guardemos as alterações feitas em arquivos para que possamos retomá-las posteriormente.  
+Adiciona os arquivos ao stash:  
+```
+git stash
+```
+
+Lista o que está em stash:
+```
+git stash list
+```
+
+Recupera o estado do arquivo em stash, mas mantém na lista de stash:
+```
+git stash apply
+```
+
+Remove o que está na lista de stash:
+```
+git stash drop
+```
+
+Recupera o estado do arquivo em stash(último), já removendo da lista:
+```
+git stash pop
+```
+
+## Voltando a commits anteriores
+
+Podemos também restaurar o estado que o código estava em um commit específico.
+Para isso podemos usar o comando checkout, com pelo menos os 7 primeiros caracteres do hash do commit:
+```
+git checkout <hashCommit>
+```
+
+Isso irá fazer com que o HEAD fique naquele commit, porém em um estado desanexado de qualquer branch.  
+Você pode fazer commits e trabalhar no código, porém, ele não será salvo, a menos que crie um novo branch para alocar essas alterações.  
+Ou seja, fazer o checkout para o commit desejado e criar uma nova branch com o comando 'git checkout -b nomeBranch'.
+
+Para navegar de volta para o commit inicial, basta usar o comando acima novamente, com o hash do commit desejado.
+
+## Diff
+Com o comando git diff, podemos ver as alterações em arquivos de um commit até outro commit:
+```
+git diff <hashCommitInicial>..<hashCommitFinal>
+```
+
+Caso tenha feito alguma alteração que não foi adicionada ao staging, podemos usar o comando abaixo para ver essas alterações:
+```
+git diff
+```
+
+## Tag
+
+Com o comando tag, adicionamos um ponto no código que representa um estado de código que não será mais alterado.  
+Por exemplo, podemos criar tags para versões de código. No comando abaixo, a mensagem é opcional:  
+```
+git tag -a v0.1.0 -m "versão 0.1.0"
+```
+
+O comando abaixo lista as tags criadas: 
+```
+git tag
+```
+
+Podemos enviar a tag para o servidor:
+```
+git push <repositorio> <nomeTag>
+git push origin v0.1.0
+```
+
+Ao fazer o push da tag para o GitHub, podemos visualizar as tags como releases, no GitHub.
