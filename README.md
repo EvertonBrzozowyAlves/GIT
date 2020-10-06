@@ -283,9 +283,9 @@ git checkout <hashCommit>
 
 Isso irá fazer com que o HEAD fique naquele commit, porém em um estado desanexado de qualquer branch.  
 Você pode fazer commits e trabalhar no código, porém, ele não será salvo, a menos que crie um novo branch para alocar essas alterações.  
-Ou seja, fazer o checkout para o commit desejado e criar uma nova branch com o comando 'git checkout -b nomeBranch'.
+Ou seja, fazer o checkout para o commit desejado e criar uma nova branch com o comando *'git checkout -b nomeBranch'*.
 
-Para navegar de volta para o commit inicial, basta usar o comando acima novamente, com o hash do commit desejado.
+>Para navegar de volta para o fluxo de trabalho (HEAD) ativo, basta usar o comando *'git checkout nomeBranch'*
 
 ## Diff
 Com o comando git diff, podemos ver as alterações em arquivos de um commit até outro commit:
