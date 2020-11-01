@@ -326,8 +326,9 @@ Para isso, podemos fazer nossos commits normalmente, mas, antes de enviar, podem
 ```
 git rebase -i HEAD~3
 ```
-O comando acima irá pegar os últimos três commits e irá exibílos em um editor para que seja feita a unificação.
+O comando acima irá pegar os últimos três (~3) commits e irá exibílos em um editor para que seja feita a unificação.
 Para unificar, basta trocar a palavra 'pick' ao lado do commit para 's' e em seguida salvar o arquivo.
+Em seguida, será exibida uma tela para editar a mensagem de commit. Após salvar esse arquivo, o histórico será alterado.
 
 
 
