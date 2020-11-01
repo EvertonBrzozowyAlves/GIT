@@ -318,3 +318,16 @@ git push origin v0.1.0
 ```
 
 Ao fazer o push da tag para o GitHub, podemos visualizar as tags como releases, no GitHub.
+
+## Unificando commits para PR
+
+Uma boa prática ao colaborar com outros projetos é a de enviar apenas um commit para que seja revisado o PR.
+Para isso, podemos fazer nossos commits normalmente, mas, antes de enviar, podemos juntar esses commits em um só, utilizando o comando:
+```
+git rebase -i HEAD~3
+```
+O comando acima irá pegar os últimos três commits e irá exibílos em um editor para que seja feita a unificação.
+Para unificar, basta trocar a palavra 'pick' ao lado do commit para 's' e em seguida salvar o arquivo.
+
+
+
