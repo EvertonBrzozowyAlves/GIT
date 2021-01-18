@@ -1,7 +1,7 @@
 # GIT
 O GIT é um sistema de versionamento de arquivos, usado principalmente para controlar versões de arquivos utilizados por várias pessoas.  
 Quando temos um projeto em que várias pessoas acessam e modificam os mesmos arquivos, é interessante utilizar o GIT como ferramenta de controle de código fonte.    
-
+O Git foi inicialmente projetado e desenvolvido por Linus Torvalds para o desenvolvimento do kernel Linux.
 
 ## Comandos básicos
 
