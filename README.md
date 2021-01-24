@@ -4,9 +4,7 @@ Quando temos um projeto em que várias pessoas acessam e modificam os mesmos arq
 O Git foi inicialmente projetado e desenvolvido por Linus Torvalds para o desenvolvimento do kernel Linux.
 É possível utilizar a ferramenta abaixo para treinar alguns comando do git:
 
-```
 [Visualize Git](https://git-school.github.io/visualizing-git/)
-```
 
 ## Comandos básicos
 
