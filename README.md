@@ -5,7 +5,7 @@ O Git foi inicialmente projetado e desenvolvido por Linus Torvalds para o desenv
 É possível utilizar a ferramenta abaixo para treinar alguns comando do git:
 
 ```
-https://git-school.github.io/visualizing-git/
+[Visualize Git](https://git-school.github.io/visualizing-git/)
 ```
 
 ## Comandos básicos
