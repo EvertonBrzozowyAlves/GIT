@@ -405,6 +405,16 @@ Para exibir quem é o responsável por determinada linha de um arquivo, podemos 
 git blame <arquivo>
 ```
 
+## Hooks
+
+Hooks são eventos. Podemos configurar ações a srem executadas em alguns momentos quando usamos git, como, por exemplo, antes de um commit, depois de um commit, ou ao fazer push.
+
+Dentro do respositório do projeto, existe uma pasta oculta do git (_.git_), que contém alguns arquivos de configuração.
+
+Uma dessas pastas é a hooks, que contém alguns arquivos de exemplo de hooks, escritos em bash.
+
+Utilizando hooks, é possível configurar publicações automáticas, testes unitários, revisão de sintaxe e código, entre outros.
+
 ## Gitflow
 
 Gitflow é um conceito, uma forma de se trabalhar com o versionamento do código.  
