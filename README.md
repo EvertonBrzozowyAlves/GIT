@@ -340,4 +340,22 @@ Para pegar alterações de um commit específico de outra branch e realizá-las 
 git cherry-pick <hashCommit>
 ```
 
+## Blame
+
+Para exibir quem é o responsável por determinada linha de um arquivo, podemos utilizar o comando git blame:
+```
+git blame <arquivo>
+```
+
+## Gitflow
+
+Gitflow é um conceito, uma forma de se trabalhar com o versionamento do código.  
+Em resumo:   
+1. Não realizar ajustes diretamente na branch principal (Master/Main)
+2. A branch principal deve ser utilizada apenas para receber código pronto para novas versões de produção (tag).
+3. Sempre comece uma nova branch para funcionalidades novas. Adote um padrão, como um prefixo *feature/*.
+4. As correções de bug devem ser feitas criando uma branch de *hotfix/* e direcionadas a master, mas também a branch de desenvolvimento.
+5. Tenha uma branch de *release/* para ajustar todas as features antes de fazer o merge para a principal.
+
+
 
